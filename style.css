@@ -154,15 +154,14 @@ body {
     align-items: center;
 }
 
-.tc-logo {
-    font-weight: 800;
-    font-size: 2.2vmin;
-    color: white;
+.tc-text {
+    font-weight: 900;
+    font-size: 3.5vmin;
     background: linear-gradient(135deg, #21d4fd 0%, #b721ff 100%);
-    width: 8.5vmin;
-    height: 8.5vmin;
-    border-radius: 0.8vmin;
-    box-shadow: 0 0 2vmin rgba(183, 33, 255, 0.4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 1vmin rgba(183, 33, 255, 0.4));
 }
 
 .azure-icon {
@@ -194,61 +193,7 @@ body {
 }
 
 /* Center Components */
-.orbit-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 25vmin;
-    height: 25vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
 
-.devops-logo-container {
-    width: 15vmin;
-    height: 15vmin;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 5vmin rgba(0, 198, 255, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.devops-logo {
-    width: 9vmin;
-    color: #4facfe;
-}
-
-.arrow-ring {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0.4vmin solid transparent;
-    border-top: 0.4vmin solid rgba(0, 198, 255, 0.5);
-    border-left: 0.4vmin solid rgba(161, 140, 209, 0.5);
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Adjust Orbit arrow position since parent's center is shifted */
-.orbit-wrapper .arrow-ring {
-    top: 50%;
-    left: 50%;
-}
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
