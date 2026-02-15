@@ -13,19 +13,24 @@
         <!-- Background Hexagon Grid -->
         <div class="hexagon-grid">
             <!-- 8 Hexagons around the center -->
-            <!-- Row 1 -->
-            <div class="hexagon hex-1" title="Azure DevOps">
+            <!-- Row 1: Elite DevOps Icons -->
+            <div class="hexagon hex-1">
+                <!-- Azure-like icon -->
                 <svg class="hex-icon azure-icon" viewBox="0 0 24 24">
-                    <path d="M5.5 19L2 15.5l9-9 4 4 3.5-3.5 3.5 3.5L11 21.5l-5.5-2.5z" fill="currentColor" />
-                </svg>
-            </div>
-            <div class="hexagon hex-2" title="GitLab">
-                <svg class="hex-icon gitlab-icon" viewBox="0 0 24 24">
-                    <path d="M22.65 14.39L12 22.13 1.35 14.39 3.01 4.7l2.84 8.63h12.3l2.84-8.63 1.66 9.69z"
+                    <path d="M11.4 2L2 11.4l9.4 9.4L20.8 11.4 11.4 2zM4.8 11.4L11.4 4.8l6.6 6.6-6.6 6.6-6.6-6.6z"
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="hexagon hex-3" title="Sync">
+            <div class="hexagon hex-2">
+                <!-- GitLab icon -->
+                <svg class="hex-icon gitlab-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.417-.724-.417-.859 0L16.425 9.452H7.575L4.91 1.263c-.135-.417-.724-.417-.859 0L1.387 9.452.045 13.587c-.114.352.016.74.322.962l11.633 8.448 11.633-8.448c.306-.222.436-.61.322-.962"
+                        fill="currentColor" />
+                </svg>
+            </div>
+            <div class="hexagon hex-3">
+                <!-- Sync/Loop icon -->
                 <svg class="hex-icon sync-icon" viewBox="0 0 24 24">
                     <path
                         d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
@@ -34,35 +39,101 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="hexagon hex-4" title="TeamCity">
-                <div class="hex-icon tc-text">TC</div>
+            <div class="hexagon hex-4">
+                <span class="tc-text">TC</span>
             </div>
-            <div class="hexagon hex-5" title="CircleCI">
+            <div class="hexagon hex-5">
+                <!-- CircleCi-like icon -->
                 <svg class="hex-icon circle-icon" viewBox="0 0 24 24">
                     <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L15.17 9.17C14.28 8.44 13.19 8 12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4c1.19 0 2.28-.44 3.17-1.17l1.42 1.42C15.35 17.5 13.75 18 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.75 0 3.35.5 4.59 1.58z"
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
                         fill="currentColor" />
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
                 </svg>
             </div>
 
             <!-- Row 3 -->
-            <div class="hexagon hex-6" title="Spring">
-                <svg class="hex-icon spring-icon" viewBox="0 0 24 24">
+            <div class="hexagon hex-6">
+                <!-- MongoDB Leaf -->
+                <svg class="hex-icon mongodb-icon" viewBox="0 0 24 24">
                     <path
-                        d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm-1 15.4c-1.3-.3-2.4-1.1-3.1-2.2l1.7-1c.5.8 1.4 1.3 2.4 1.3 1.7 0 3-1.3 3-3s-1.3-3-3-3l-1 2-2-4c2.8 0 5 2.2 5 5s-2.2 5-5 5z"
+                        d="M12 2L11.5 2.5C9 4.5 7 8 7 12C7 16 9 20 11.5 21.5L12 22L12.5 21.5C15 20 17 16 17 12C17 8 15 4.5 12.5 2.5L12 2ZM12 5C13.5 6.5 15 9 15 12C15 15 13.5 18 12 19.5"
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="hexagon hex-7" title="Docker">
-                <svg class="hex-icon docker-icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-                    <path
-                        d="M13.9 8.8h2.7v2.7h-2.7V8.8zm-3.4 0h2.7v2.7h-2.7V8.8zm-3.4 0h2.7v2.7h-2.7V8.8zm-3.4 0h2.7v2.7h-2.7V8.8zm0-3h2.7v2.7h-2.7V5.8zm3.4 0h2.7v2.7h-2.7V5.8zm3.4 0h2.7v2.7h-2.7V5.8zm0-3h2.7v2.7h-2.7V2.8zm3.4 6h2.7v2.7h-2.7V8.8zM24 12c-0.1-0.1-2.1-1.9-6.3-1.9-0.2 0-0.4 0-0.6 0-0.1-0.9-1-1.5-1.9-1.5h-0.2L15 8.8v2.7h2.3c0.4 0 0.7 0.3 0.7 0.7 0 1.3-0.7 2.4-1.7 3-0.8 0.5-1.7 0.6-2.6 0.7-0.6 0-1.1 0-1.7 0h-0.2L12 15.1v-3.6h-2.6l-0.2 0.4-0.1 0.4c-1 1.8-3.1 2.9-5.3 2.9-0.4 0-0.9 0-1.3-0.1l-0.1 0v-3.2H0.1c0.4 0 0.7 0.3 0.7 0.7 0 2 1.6 3.5 3.5 3.5 1.9 0 3.4-1.4 3.5-3.1l0.1-0.4v-0.1c0.4 0 0.8 0 1.2 0.1h0.4z"
+            <div class="hexagon hex-7">
+                <!-- Helm/Wheel icon -->
+                <svg class="hex-icon helm-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" fill="currentColor" />
+                    <path d="M12 2L10 5h4l-2-3zm0 20l2-3h-4l2 3zM2 12l3 2v-4l-3 2zm20 0l-3-2v4l3-2z"
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="hexagon hex-8" title="Azure Pipelines">
+            <div class="hexagon hex-8">
+                <!-- Rocket/Terraform icon -->
                 <svg class="hex-icon rocket-icon" viewBox="0 0 24 24">
-                    <path d="M12 2L4.5 20.3l.7.7L12 18l6.8 3 .7-.7L12 2z" fill="currentColor" />
+                    <path
+                        d="M13.13 22.19l-1.63-3.83c1.57-.64 3.04-1.55 4.37-2.71l2.23 2.23c-1.47 1.63-3.23 3.01-5.18 4.19.14.04.28.08.43.12h.78c-.34-.02-.68-.02-1-.02v-.03c-.23.1-.46.16-.72.16zM5.34 16.27l2.23-2.23c1.33 1.16 2.8 2.07 4.37 2.71l-1.63 3.83c-1.95-1.18-3.71-2.56-5.18-4.19.14-.04.28-.08.43-.12.72-.16-.49-.06.22-.16z"
+                        fill="currentColor" />
+                    <path d="M12 2L4 12l8 10 8-10L12 2zm0 16l-4-6 4-6 4 6-4 6z" fill="currentColor" />
+                </svg>
+            </div>
+
+            <!-- Central Infinity Logo (Refined with Arrows) -->
+            <div class="infinity-container">
+                <svg class="infinity-svg" viewBox="0 0 240 120">
+                    <defs>
+                        <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#b721ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#21d4fd;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#21d4fd;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0078d4;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00c6ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3fef9d;stop-opacity:1" />
+                        </linearGradient>
+
+                        <!-- Slimmer Interlocking Segment v23 (Restored Balance) -->
+                        <symbol id="arrow-shape" viewBox="0 0 70 30">
+                            <!-- Reduced thickness to prevent obscuring hexagons -->
+                            <path d="M5,4 Q35,-1 65,4 L70,15 L65,26 Q35,31 5,26 L12,15 Z" fill="currentColor" />
+                        </symbol>
+                    </defs>
+
+                    <g class="arrows-group">
+                        <!-- Calibrated Rail path (Perfect Circular Lobe Approximation) -->
+                        <path class="rail"
+                            d="M120,60 C120,34 151,13 190,13 C229,13 260,34 260,60 C260,86 229,107 190,107 C151,107 120,86 120,60 C120,34 89,13 50,13 C11,13 -20,34 -20,60 C-20,86 11,107 50,107 C89,107 120,86 120,60" />
+
+                        <!-- 12 vibrant slimmest segments (Spectral Purple-to-Cyan) scaled for balance -->
+                        <use href="#arrow-shape" class="arrow p1" x="-35" y="-15" width="70" height="30"
+                            style="color: #b721ff;" />
+                        <use href="#arrow-shape" class="arrow p2" x="-35" y="-15" width="70" height="30"
+                            style="color: #d115ff;" />
+                        <use href="#arrow-shape" class="arrow p3" x="-35" y="-15" width="70" height="30"
+                            style="color: #8c73ff;" />
+                        <use href="#arrow-shape" class="arrow p4" x="-35" y="-15" width="70" height="30"
+                            style="color: #6a5eff;" />
+                        <use href="#arrow-shape" class="arrow p5" x="-35" y="-15" width="70" height="30"
+                            style="color: #438aff;" />
+                        <use href="#arrow-shape" class="arrow p6" x="-35" y="-15" width="70" height="30"
+                            style="color: #21d4fd;" />
+                        <use href="#arrow-shape" class="arrow p7" x="-35" y="-15" width="70" height="30"
+                            style="color: #00bef4;" />
+                        <use href="#arrow-shape" class="arrow p8" x="-35" y="-15" width="70" height="30"
+                            style="color: #00f2ff;" />
+                        <use href="#arrow-shape" class="arrow p9" x="-35" y="-15" width="70" height="30"
+                            style="color: #17ffd3;" />
+                        <use href="#arrow-shape" class="arrow p10" x="-35" y="-15" width="70" height="30"
+                            style="color: #3fef9d;" />
+                        <use href="#arrow-shape" class="arrow p11" x="-35" y="-15" width="70" height="30"
+                            style="color: #63ffad;" />
+                        <use href="#arrow-shape" class="arrow p12" x="-35" y="-15" width="70" height="30"
+                            style="color: #b721ff;" />
+                    </g>
                 </svg>
             </div>
         </div>
