@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #050b15;
+    --hex-border: rgba(255, 255, 255, 0.1);
+    --logo-color: #4facfe;
+    --hex-width: 130px;
+    --hex-height: 150px;
+    --gap-x: 135px;
+    --gap-y: 115px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at center, #1a2a44 0%, #050b15 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hexagon Grid Container (Centered) */
+.hexagon-grid {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hexagon Shape */
+.hexagon {
+    position: absolute;
+    width: var(--hex-width);
+    height: var(--hex-height);
+    background: #111;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--hex-border);
+}
+
+.hexagon:hover {
+    transform: translate(-50%, -50%) scale(1.1) !important;
+    z-index: 20;
+    filter: brightness(1.2);
+}
+
+.hexagon::after {
+    content: attr(data-label);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Position 8 Hexagons in 3-2-3 grid */
+/* All are absolute so we translate from the center of .hexagon-grid */
+
+/* Row 1 (Top) */
+.hex-1 {
+    transform: translate(calc(-1 * var(--gap-x)), calc(-1 * var(--gap-y)));
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.hex-2 {
+    transform: translate(0, calc(-1 * var(--gap-y)));
+    background: linear-gradient(135deg, #c31432, #240b36);
+}
+
+.hex-3 {
+    transform: translate(var(--gap-x), calc(-1 * var(--gap-y)));
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Row 2 (Middle) */
+.hex-4 {
+    transform: translate(calc(-1.5 * var(--gap-x)), 0);
+    background: linear-gradient(135deg, #373b44, #4286f4);
+}
+
+.hex-5 {
+    transform: translate(calc(1.5 * var(--gap-x)), 0);
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+}
+
+/* Row 3 (Bottom) */
+.hex-6 {
+    transform: translate(calc(-1 * var(--gap-x)), var(--gap-y));
+    background: linear-gradient(135deg, #134e5e, #71b280);
+}
+
+.hex-7 {
+    transform: translate(0, var(--gap-y));
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.hex-8 {
+    transform: translate(var(--gap-x), var(--gap-y));
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+/* Center Orbit & Logo Wrapper */
+.orbit-wrapper {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.devops-logo-container {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(0, 198, 255, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.devops-logo {
+    width: 70px;
+    color: var(--logo-color);
+}
+
+.arrow-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
