@@ -1,17 +1,19 @@
 :root {
     --bg-color: #050b15;
-    --hex-border: rgba(255, 255, 255, 0.1);
-    --logo-color: #4facfe;
-    --hex-width: 130px;
-    --hex-height: 150px;
-    --gap-x: 135px;
-    --gap-y: 115px;
+    --hex-dark: #121822;
+    --hex-border: rgba(255, 255, 255, 0.05);
+    /* Responsive units: 15vmin means 15% of the viewport's smaller dimension */
+    --hex-w: 18vmin;
+    --hex-h: 21vmin;
+    --gap-x: 19vmin;
+    --gap-y: 16.5vmin;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -21,112 +23,184 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100vw;
     overflow: hidden;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Hexagon Grid Container (Centered) */
+/* Centered Hexagon Grid */
 .hexagon-grid {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 100vmin;
+    height: 100vmin;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Hexagon Shape */
 .hexagon {
     position: absolute;
-    width: var(--hex-width);
-    height: var(--hex-height);
-    background: #111;
+    top: 50%;
+    left: 50%;
+    width: var(--hex-w);
+    height: var(--hex-h);
+    background: var(--hex-dark);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.02), 0 1vmin 3vmin rgba(0, 0, 0, 0.5);
     border: 1px solid var(--hex-border);
+    /* Center each hexagon on its own origin first */
+    transform: translate(-50%, -50%);
 }
 
 .hexagon:hover {
-    transform: translate(-50%, -50%) scale(1.1) !important;
+    filter: brightness(1.6);
     z-index: 20;
-    filter: brightness(1.2);
+    /* Scale on hover, keeping translation for its grid position (set below) */
 }
 
-.hexagon::after {
-    content: attr(data-label);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+/* Specific Positions (Center relative 3-2-3 Grid) */
+/* Using translate(-50%, -50%) to center and then adding offsets */
 
-/* Position 8 Hexagons in 3-2-3 grid */
-/* All are absolute so we translate from the center of .hexagon-grid */
-
-/* Row 1 (Top) */
 .hex-1 {
-    transform: translate(calc(-1 * var(--gap-x)), calc(-1 * var(--gap-y)));
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    transform: translate(calc(-50% - var(--gap-x)), calc(-50% - var(--gap-y)));
 }
 
 .hex-2 {
-    transform: translate(0, calc(-1 * var(--gap-y)));
-    background: linear-gradient(135deg, #c31432, #240b36);
+    transform: translate(-50%, calc(-50% - var(--gap-y)));
 }
 
 .hex-3 {
-    transform: translate(var(--gap-x), calc(-1 * var(--gap-y)));
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    transform: translate(calc(-50% + var(--gap-x)), calc(-50% - var(--gap-y)));
 }
 
-/* Row 2 (Middle) */
 .hex-4 {
-    transform: translate(calc(-1.5 * var(--gap-x)), 0);
-    background: linear-gradient(135deg, #373b44, #4286f4);
+    transform: translate(calc(-50% - 1.5 * var(--gap-x)), -50%);
 }
 
 .hex-5 {
-    transform: translate(calc(1.5 * var(--gap-x)), 0);
-    background: linear-gradient(135deg, #4b6cb7, #182848);
+    transform: translate(calc(-50% + 1.5 * var(--gap-x)), -50%);
 }
 
-/* Row 3 (Bottom) */
 .hex-6 {
-    transform: translate(calc(-1 * var(--gap-x)), var(--gap-y));
-    background: linear-gradient(135deg, #134e5e, #71b280);
+    transform: translate(calc(-50% - var(--gap-x)), calc(-50% + var(--gap-y)));
 }
 
 .hex-7 {
-    transform: translate(0, var(--gap-y));
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    transform: translate(-50%, calc(-50% + var(--gap-y)));
 }
 
 .hex-8 {
-    transform: translate(var(--gap-x), var(--gap-y));
-    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    transform: translate(calc(-50% + var(--gap-x)), calc(-50% + var(--gap-y)));
 }
 
-/* Center Orbit & Logo Wrapper */
+/* Adding Hover Scaling separately to not override grid translation */
+.hexagon:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hex-1:hover {
+    transform: translate(calc(-50% - var(--gap-x)), calc(-50% - var(--gap-y))) scale(1.1);
+}
+
+.hex-2:hover {
+    transform: translate(-50%, calc(-50% - var(--gap-y))) scale(1.1);
+}
+
+.hex-3:hover {
+    transform: translate(calc(-50% + var(--gap-x)), calc(-50% - var(--gap-y))) scale(1.1);
+}
+
+.hex-4:hover {
+    transform: translate(calc(-50% - 1.5 * var(--gap-x)), -50%) scale(1.1);
+}
+
+.hex-5:hover {
+    transform: translate(calc(-50% + 1.5 * var(--gap-x)), -50%) scale(1.1);
+}
+
+.hex-6:hover {
+    transform: translate(calc(-50% - var(--gap-x)), calc(-50% + var(--gap-y))) scale(1.1);
+}
+
+.hex-7:hover {
+    transform: translate(-50%, calc(-50% + var(--gap-y))) scale(1.1);
+}
+
+.hex-8:hover {
+    transform: translate(calc(-50% + var(--gap-x)), calc(-50% + var(--gap-y))) scale(1.1);
+}
+
+/* Icon Styling */
+.hex-icon {
+    width: 8vmin;
+    height: 8vmin;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tc-logo {
+    font-weight: 800;
+    font-size: 2.2vmin;
+    color: white;
+    background: linear-gradient(135deg, #21d4fd 0%, #b721ff 100%);
+    width: 8.5vmin;
+    height: 8.5vmin;
+    border-radius: 0.8vmin;
+    box-shadow: 0 0 2vmin rgba(183, 33, 255, 0.4);
+}
+
+.azure-icon {
+    color: #0078d4;
+}
+
+.gitlab-icon {
+    color: #fca121;
+}
+
+.sync-icon {
+    color: #00c6ff;
+}
+
+.circle-icon {
+    color: #ffffff;
+}
+
+.spring-icon {
+    color: #6db33f;
+}
+
+.docker-icon {
+    color: #2496ed;
+}
+
+.rocket-icon {
+    color: #00c6ff;
+}
+
+/* Center Components */
 .orbit-wrapper {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vmin;
+    height: 25vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,37 +208,54 @@ body {
 }
 
 .devops-logo-container {
-    width: 120px;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.95);
+    width: 15vmin;
+    height: 15vmin;
+    background: white;
     border-radius: 50%;
-    box-shadow: 0 0 40px rgba(0, 198, 255, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5vmin rgba(0, 198, 255, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .devops-logo {
-    width: 70px;
-    color: var(--logo-color);
+    width: 9vmin;
+    color: #4facfe;
 }
 
 .arrow-ring {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border: 0.4vmin solid transparent;
+    border-top: 0.4vmin solid rgba(0, 198, 255, 0.5);
+    border-left: 0.4vmin solid rgba(161, 140, 209, 0.5);
     border-radius: 50%;
-    pointer-events: none;
-    animation: rotate 20s linear infinite;
+    animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
     from {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Adjust Orbit arrow position since parent's center is shifted */
+.orbit-wrapper .arrow-ring {
+    top: 50%;
+    left: 50%;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    :root {
+        --hex-w: 22vmin;
+        --hex-h: 25vmin;
+        --gap-x: 24vmin;
+        --gap-y: 20vmin;
     }
 }
