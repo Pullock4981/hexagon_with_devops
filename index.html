@@ -73,73 +73,199 @@
             <div class="infinity-container">
                 <svg class="infinity-svg" viewBox="0 0 240 120">
                     <defs>
-                        <!-- Segment Gradients (8 Distinct Steps) -->
+                        <!-- Seamless Linked Gradients (8 Steps) -->
                         <linearGradient id="grad-seg-1" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#e090ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#db98ff;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#db98ff;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#d99cff;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#d5a0ff;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-2" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#d5a0ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#cba4ff;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#cba4ff;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#c5a6ff;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#c0a8ff;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-3" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#c0a8ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#b5b0ff;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#b5b0ff;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#afb4ff;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#aab8ff;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-4" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#aab8ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#a0c0ff;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#a0c0ff;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#9bc4ff;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#95c8ff;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-5" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#95c8ff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#8bd0f8;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#8bd0f8;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#85d4f4;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#80d8f0;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-6" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#80d8f0;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#88e0e8;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#88e0e8;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#8ce4e4;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#90e8e0;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-7" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#90e8e0;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#9cecd8;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#9cecd8;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#a2eed4;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#a8f0d0;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad-seg-8" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#a8f0d0;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#c4c0e8;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#c4c0e8;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#d2a8f4;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#e090ff;stop-opacity:1" />
                         </linearGradient>
+
+                        <!-- Infinity Path for Motion Reference -->
+                        <!-- Infinity Path for Motion Reference (More Rounded) -->
+                        <path id="loop-path-ref"
+                            d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60" />
+
+                        <!-- Arrow Marker Definitions -->
+                        <marker id="arrow-lead" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="3" markerHeight="3"
+                            orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffffaa" />
+                        </marker>
+                        <marker id="arrow-trail" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="3" markerHeight="3"
+                            orient="auto">
+                            <path d="M 10 0 L 0 5 L 10 10 z" fill="#ffffffaa" />
+                        </marker>
                     </defs>
+
+                    <!-- 16 Anchor Paths (8 Lead, 8 Trail) Synchronized with segments -->
+                    <g class="marker-group">
+                        <!-- Lead Anchors -->
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="0s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-3s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-6s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-9s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-12s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-15s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-18s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-end="url(#arrow-lead)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-21s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+
+                        <!-- Trail Anchors (Delayed by ~2.976s to match 12.4% segment length) -->
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-2.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-5.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-8.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-11.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-14.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-17.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-20.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                        <path class="marker-anchor" marker-start="url(#arrow-trail)">
+                            <animateMotion dur="24s" repeatCount="indefinite" rotate="auto" keyPoints="1;0"
+                                keyTimes="0;1" calcMode="linear" begin="-23.976s">
+                                <mpath href="#loop-path-ref" />
+                            </animateMotion>
+                        </path>
+                    </g>
 
                     <!-- 8 Segments Chasing Each Other (Straight Caps) -->
                     <path class="infinity-segment seg-1"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-1)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-2"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-2)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-3"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-3)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-4"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-4)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-5"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-5)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-6"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-6)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-7"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-7)" fill="none" pathLength="1" />
                     <path class="infinity-segment seg-8"
-                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        d="M 30,60 C 30,10 90,10 120,60 C 150,110 210,110 210,60 C 210,10 150,10 120,60 C 90,110 30,110 30,60"
                         stroke="url(#grad-seg-8)" fill="none" pathLength="1" />
                 </svg>
             </div>

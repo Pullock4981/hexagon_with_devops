@@ -225,10 +225,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 85vmin;
-    /* Increased from 65vmin */
-    height: 34vmin;
-    /* Increased from 26vmin */
+    width: 100vmin;
+    /* Increased for better visibility */
+    height: 40vmin;
+    /* Increased for better visibility */
     z-index: 100;
     /* Ensure loop is ALWAYS ON TOP of hexagons (even hovered ones) */
     display: flex;
@@ -252,14 +252,21 @@ body {
 /* Continuous Infinity Path - Segments */
 .infinity-segment {
     fill: none;
-    stroke-width: 32;
-    /* Bolder look */
+    stroke-width: 24;
+    /* Slimmer look */
     stroke-linecap: butt;
     /* Straight gaps */
-    stroke-dasharray: 0.123 0.877;
-    /* Tighter gaps */
+    stroke-dasharray: 0.124 0.876;
+    /* Precise Segment Length */
     stroke-dashoffset: 0;
     animation: loopMove 24s linear infinite;
+}
+
+/* Hidden Paths used only to anchor markers */
+.marker-anchor {
+    fill: none;
+    stroke: none;
+    pointer-events: none;
 }
 
 /* Staggered Delays for 8 Segments */
