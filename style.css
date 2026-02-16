@@ -1,14 +1,20 @@
 :root {
     --bg-color: #050b15;
     --hex-dark: #121822;
+    /* Fallback */
     /* Return to darker mood */
-    --hex-border: rgba(255, 255, 255, 0.08);
-    /* Tightened layout spacing */
-    --hex-w: 22vmin;
-    --hex-h: 24vmin;
-    --gap-x: 26vmin;
-    /* Expanded for visibility */
-    --gap-y: 21vmin;
+    --hex-border: rgba(255, 255, 255, 0.1);
+    /* Tightened layout spacing for cluster effect */
+    --hex-w: 28vmin;
+    /* Increased from 22vmin */
+    --hex-h: 30vmin;
+    /* Increased from 24vmin */
+    --gap-x: 28.5vmin;
+    /* Increased from 22.5vmin */
+    /* Increased for small gap (beshi nah) */
+    --gap-y: 24vmin;
+    /* Increased from 19vmin */
+    /* Increased for small vertical gap */
 }
 
 * {
@@ -47,6 +53,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    /* Behind loop */
 }
 
 .hexagon {
@@ -55,18 +63,20 @@ body {
     left: 50%;
     width: var(--hex-w);
     height: var(--hex-h);
-    background: var(--hex-dark);
+    /* 3D Surface: Linear Gradient + Inner Shadow via Box-Shadow won't work with clip-path, so we use background */
+    background: linear-gradient(135deg, #2a3b55 0%, #121822 100%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Fake border using inset box-shadow won't work on clip-path elements directly, 
+       but we can use a drop-shadow filter on the parent or this element for depth */
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
+
     /* Center each hexagon on its own origin first */
     transform: translate(-50%, -50%);
-    box-shadow: none;
-    /* No shadow */
 }
 
 .hexagon:hover {
@@ -163,12 +173,14 @@ body {
 
 /* Icon Styling */
 .hex-icon {
-    width: 8vmin;
-    height: 8vmin;
+    width: 60%;
+    height: 60%;
     transition: transform 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    filter: drop-shadow(0 0 1vmin rgba(255, 255, 255, 0.2));
+}
+
+.hexagon:hover .hex-icon {
+    transform: scale(1.2);
 }
 
 .tc-text {
@@ -208,22 +220,22 @@ body {
     filter: drop-shadow(0 0 0.8vmin rgba(64, 196, 255, 0.4));
 }
 
-
 .infinity-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 65vmin;
-    /* Scaled down for better balance */
-    height: 26vmin;
+    width: 85vmin;
+    /* Increased from 65vmin */
+    height: 34vmin;
+    /* Increased from 26vmin */
     z-index: 100;
-    /* Always above hexagons including hover states */
-    pointer-events: none;
-    /* Allow hovering hexagons through the logo */
+    /* Ensure loop is ALWAYS ON TOP of hexagons (even hovered ones) */
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
+    /* Allow clicks to pass through to hexagons */
 }
 
 .infinity-svg {
@@ -234,88 +246,63 @@ body {
 
 /* The rail (track) - hidden */
 .rail {
+    display: none;
+}
+
+/* Continuous Infinity Path - Segments */
+.infinity-segment {
     fill: none;
-    stroke: none;
-    stroke-width: 0;
+    stroke-width: 32;
+    /* Bolder look */
+    stroke-linecap: butt;
+    /* Straight gaps */
+    stroke-dasharray: 0.115 0.885;
+    /* Visible gaps */
+    stroke-dashoffset: 0;
+    animation: loopMove 24s linear infinite;
 }
 
-.arrow {
-    fill: currentColor;
-    opacity: 1;
-    stroke: none;
-    /* Calibrated Circular Rail (0.552 Handle Ratio) matching index.html */
-    offset-path: path('M120,60 C120,34 151,13 190,13 C229,13 260,34 260,60 C260,86 229,107 190,107 C151,107 120,86 120,60 C120,34 89,13 50,13 C11,13 -20,34 -20,60 C-20,86 11,107 50,107 C89,107 120,86 120,60');
-    offset-rotate: auto;
-    animation-name: infinityFlow;
-    animation-duration: 25s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    /* Shadows removed per user request for a cleaner look */
-    filter: none;
+/* Staggered Delays for 8 Segments */
+.seg-1 {
+    animation-delay: -24s;
 }
 
-/* Staggering the 12 segments for the 25s loop (25/12 = 2.0833s) */
-.p1 {
-    animation-delay: 0s;
+.seg-2 {
+    animation-delay: -21s;
 }
 
-.p2 {
-    animation-delay: -2.083s;
+.seg-3 {
+    animation-delay: -18s;
 }
 
-.p3 {
-    animation-delay: -4.166s;
+.seg-4 {
+    animation-delay: -15s;
 }
 
-.p4 {
-    animation-delay: -6.25s;
+.seg-5 {
+    animation-delay: -12s;
 }
 
-.p5 {
-    animation-delay: -8.333s;
+.seg-6 {
+    animation-delay: -9s;
 }
 
-.p6 {
-    animation-delay: -10.416s;
+.seg-7 {
+    animation-delay: -6s;
 }
 
-.p7 {
-    animation-delay: -12.5s;
+.seg-8 {
+    animation-delay: -3s;
 }
 
-.p8 {
-    animation-delay: -14.583s;
-}
-
-.p9 {
-    animation-delay: -16.666s;
-}
-
-.p10 {
-    animation-delay: -18.75s;
-}
-
-.p11 {
-    animation-delay: -20.833s;
-}
-
-.p12 {
-    animation-delay: -22.916s;
-}
-
-@keyframes infinityFlow {
+@keyframes loopMove {
     from {
-        offset-distance: 0%;
+        stroke-dashoffset: 0;
     }
 
     to {
-        offset-distance: 100%;
+        stroke-dashoffset: -1;
     }
-}
-
-.arrows-group {
-    /* Removed dual-lobe glow per user request */
-    filter: none;
 }
 
 /* Mobile Adjustments */

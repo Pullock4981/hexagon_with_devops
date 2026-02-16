@@ -13,16 +13,13 @@
         <!-- Background Hexagon Grid -->
         <div class="hexagon-grid">
             <!-- 8 Hexagons around the center -->
-            <!-- Row 1: Elite DevOps Icons -->
             <div class="hexagon hex-1">
-                <!-- Azure-like icon -->
                 <svg class="hex-icon azure-icon" viewBox="0 0 24 24">
                     <path d="M11.4 2L2 11.4l9.4 9.4L20.8 11.4 11.4 2zM4.8 11.4L11.4 4.8l6.6 6.6-6.6 6.6-6.6-6.6z"
                         fill="currentColor" />
                 </svg>
             </div>
             <div class="hexagon hex-2">
-                <!-- GitLab icon -->
                 <svg class="hex-icon gitlab-icon" viewBox="0 0 24 24">
                     <path
                         d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.417-.724-.417-.859 0L16.425 9.452H7.575L4.91 1.263c-.135-.417-.724-.417-.859 0L1.387 9.452.045 13.587c-.114.352.016.74.322.962l11.633 8.448 11.633-8.448c.306-.222.436-.61.322-.962"
@@ -30,7 +27,6 @@
                 </svg>
             </div>
             <div class="hexagon hex-3">
-                <!-- Sync/Loop icon -->
                 <svg class="hex-icon sync-icon" viewBox="0 0 24 24">
                     <path
                         d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
@@ -38,12 +34,10 @@
                 </svg>
             </div>
 
-            <!-- Row 2 -->
             <div class="hexagon hex-4">
                 <span class="tc-text">TC</span>
             </div>
             <div class="hexagon hex-5">
-                <!-- CircleCi-like icon -->
                 <svg class="hex-icon circle-icon" viewBox="0 0 24 24">
                     <path
                         d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
@@ -52,9 +46,7 @@
                 </svg>
             </div>
 
-            <!-- Row 3 -->
             <div class="hexagon hex-6">
-                <!-- MongoDB Leaf -->
                 <svg class="hex-icon mongodb-icon" viewBox="0 0 24 24">
                     <path
                         d="M12 2L11.5 2.5C9 4.5 7 8 7 12C7 16 9 20 11.5 21.5L12 22L12.5 21.5C15 20 17 16 17 12C17 8 15 4.5 12.5 2.5L12 2ZM12 5C13.5 6.5 15 9 15 12C15 15 13.5 18 12 19.5"
@@ -62,7 +54,6 @@
                 </svg>
             </div>
             <div class="hexagon hex-7">
-                <!-- Helm/Wheel icon -->
                 <svg class="hex-icon helm-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="3" fill="currentColor" />
                     <path d="M12 2L10 5h4l-2-3zm0 20l2-3h-4l2 3zM2 12l3 2v-4l-3 2zm20 0l-3-2v4l3-2z"
@@ -70,7 +61,6 @@
                 </svg>
             </div>
             <div class="hexagon hex-8">
-                <!-- Rocket/Terraform icon -->
                 <svg class="hex-icon rocket-icon" viewBox="0 0 24 24">
                     <path
                         d="M13.13 22.19l-1.63-3.83c1.57-.64 3.04-1.55 4.37-2.71l2.23 2.23c-1.47 1.63-3.23 3.01-5.18 4.19.14.04.28.08.43.12h.78c-.34-.02-.68-.02-1-.02v-.03c-.23.1-.46.16-.72.16zM5.34 16.27l2.23-2.23c1.33 1.16 2.8 2.07 4.37 2.71l-1.63 3.83c-1.95-1.18-3.71-2.56-5.18-4.19.14-.04.28-.08.43-.12.72-.16-.49-.06.22-.16z"
@@ -79,66 +69,81 @@
                 </svg>
             </div>
 
-            <!-- Central Infinity Logo (Refined with Arrows) -->
+            <!-- Central Infinity Logo (Fixed Segmented Version) -->
             <div class="infinity-container">
                 <svg class="infinity-svg" viewBox="0 0 240 120">
                     <defs>
-                        <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#b721ff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#21d4fd;stop-opacity:1" />
+                        <!-- Segment Gradients (8 Distinct Steps) -->
+                        <linearGradient id="grad-seg-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#e090ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#db98ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d5a0ff;stop-opacity:1" />
                         </linearGradient>
-                        <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#21d4fd;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#0078d4;stop-opacity:1" />
+                        <linearGradient id="grad-seg-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#d5a0ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#cba4ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c0a8ff;stop-opacity:1" />
                         </linearGradient>
-                        <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00c6ff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#3fef9d;stop-opacity:1" />
+                        <linearGradient id="grad-seg-3" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#c0a8ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#b5b0ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#aab8ff;stop-opacity:1" />
                         </linearGradient>
-
-                        <!-- Slimmer Interlocking Segment v23 (Restored Balance) -->
-                        <symbol id="arrow-shape" viewBox="0 0 70 30">
-                            <!-- Reduced thickness to prevent obscuring hexagons -->
-                            <path d="M5,4 Q35,-1 65,4 L70,15 L65,26 Q35,31 5,26 L12,15 Z" fill="currentColor" />
-                        </symbol>
+                        <linearGradient id="grad-seg-4" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#aab8ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#a0c0ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#95c8ff;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-seg-5" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#95c8ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#8bd0f8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#80d8f0;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-seg-6" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#80d8f0;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#88e0e8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#90e8e0;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-seg-7" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#90e8e0;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#9cecd8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a8f0d0;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="grad-seg-8" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#a8f0d0;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#c4c0e8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e090ff;stop-opacity:1" />
+                        </linearGradient>
                     </defs>
 
-                    <g class="arrows-group">
-                        <!-- Calibrated Rail path (Perfect Circular Lobe Approximation) -->
-                        <path class="rail"
-                            d="M120,60 C120,34 151,13 190,13 C229,13 260,34 260,60 C260,86 229,107 190,107 C151,107 120,86 120,60 C120,34 89,13 50,13 C11,13 -20,34 -20,60 C-20,86 11,107 50,107 C89,107 120,86 120,60" />
-
-                        <!-- 12 vibrant slimmest segments (Spectral Purple-to-Cyan) scaled for balance -->
-                        <use href="#arrow-shape" class="arrow p1" x="-35" y="-15" width="70" height="30"
-                            style="color: #b721ff;" />
-                        <use href="#arrow-shape" class="arrow p2" x="-35" y="-15" width="70" height="30"
-                            style="color: #d115ff;" />
-                        <use href="#arrow-shape" class="arrow p3" x="-35" y="-15" width="70" height="30"
-                            style="color: #8c73ff;" />
-                        <use href="#arrow-shape" class="arrow p4" x="-35" y="-15" width="70" height="30"
-                            style="color: #6a5eff;" />
-                        <use href="#arrow-shape" class="arrow p5" x="-35" y="-15" width="70" height="30"
-                            style="color: #438aff;" />
-                        <use href="#arrow-shape" class="arrow p6" x="-35" y="-15" width="70" height="30"
-                            style="color: #21d4fd;" />
-                        <use href="#arrow-shape" class="arrow p7" x="-35" y="-15" width="70" height="30"
-                            style="color: #00bef4;" />
-                        <use href="#arrow-shape" class="arrow p8" x="-35" y="-15" width="70" height="30"
-                            style="color: #00f2ff;" />
-                        <use href="#arrow-shape" class="arrow p9" x="-35" y="-15" width="70" height="30"
-                            style="color: #17ffd3;" />
-                        <use href="#arrow-shape" class="arrow p10" x="-35" y="-15" width="70" height="30"
-                            style="color: #3fef9d;" />
-                        <use href="#arrow-shape" class="arrow p11" x="-35" y="-15" width="70" height="30"
-                            style="color: #63ffad;" />
-                        <use href="#arrow-shape" class="arrow p12" x="-35" y="-15" width="70" height="30"
-                            style="color: #b721ff;" />
-                    </g>
+                    <!-- 8 Segments Chasing Each Other (Straight Caps) -->
+                    <path class="infinity-segment seg-1"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-1)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-2"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-2)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-3"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-3)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-4"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-4)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-5"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-5)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-6"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-6)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-7"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-7)" fill="none" pathLength="1" />
+                    <path class="infinity-segment seg-8"
+                        d="M 10,60 C 10,10 80,10 120,60 C 160,110 230,110 230,60 C 230,10 160,10 120,60 C 80,110 10,110 10,60"
+                        stroke="url(#grad-seg-8)" fill="none" pathLength="1" />
                 </svg>
             </div>
         </div>
-
-
     </div>
 </body>
 
