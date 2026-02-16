@@ -269,7 +269,7 @@ body {
     pointer-events: none;
 }
 
-/* Staggered Delays for 8 Segments */
+/* Staggered Delays for 8 Segments.... */
 .seg-1 {
     animation-delay: -24s;
 }
